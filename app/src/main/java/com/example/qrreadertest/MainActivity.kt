@@ -1,7 +1,6 @@
 package com.example.qrreadertest
 
 import android.Manifest
-import android.graphics.Color
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
@@ -25,10 +24,8 @@ class MainActivity : AppCompatActivity() {
     private val callback: BarcodeCallback = object : BarcodeCallback {
         override fun barcodeResult(result: BarcodeResult) {
             //Added preview of scanned barcode
-            mainViewModel.onLoadImage(result.getBitmapWithResultPoints(Color.YELLOW))
             mainViewModel.onMatchContent(result.text)
         }
-
         override fun possibleResultPoints(resultPoints: List<ResultPoint>) {}
     }
 

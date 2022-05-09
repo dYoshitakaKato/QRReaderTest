@@ -31,14 +31,5 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:showIfLoading="@{view_model.isLoading}"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:imageBitmap="@{view_model.bitmap}"
-            android:id="@+id/barcodePreview"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

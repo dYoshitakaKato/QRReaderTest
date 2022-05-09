@@ -1,6 +1,5 @@
 package com.example.qrreadertest
 
-import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,17 +9,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-
-    private val _bitmap = MutableLiveData<Bitmap>()
-    val bitmap: LiveData<Bitmap> = _bitmap
     private val _isLoading = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
-
-    fun onLoadImage(bitmap: Bitmap, dispatcher: CoroutineDispatcher = Dispatchers.IO) {
-        viewModelScope.launch(dispatcher) {
-            _bitmap.postValue(bitmap)
-        }
-    }
 
     private val _content = MutableLiveData<String>()
     val content: LiveData<String> = _content
