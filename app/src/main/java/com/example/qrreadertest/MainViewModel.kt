@@ -15,9 +15,9 @@ class MainViewModel : ViewModel() {
     private val _content = MutableLiveData<String>()
     val content: LiveData<String> = _content
     fun onMatchContent(contents: String, dispatcher: CoroutineDispatcher = Dispatchers.IO) {
+        _isLoading.value = true
+        _content.value = contents
         viewModelScope.launch(dispatcher) {
-            _content.postValue(contents)
-            _isLoading.postValue(true)
             kotlin.runCatching {
                 // TODO DBConnect
             }.onFailure {
