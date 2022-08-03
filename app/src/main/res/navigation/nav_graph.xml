@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/qrReaderFragment">
+    <fragment
+        android:id="@+id/qrReaderFragment"
+        android:name="com.example.qrreadertest.QRreaderFragment"
+        android:label="QRreaderFragment" >
+        <action
+            android:id="@+id/action_qrReaderFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.qrreadertest.ResultFragment"
+        android:label="ResultFragment" >
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+</navigation>

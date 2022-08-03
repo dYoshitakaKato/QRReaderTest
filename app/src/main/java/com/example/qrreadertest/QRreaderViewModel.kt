@@ -8,15 +8,17 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class QRreaderViewModel : ViewModel() {
     private val _isLoading = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
+
+    val onTransit = MutableLiveData<Event<String>>()
 
     private val _content = MutableLiveData<String>()
     val content: LiveData<String> = _content
     fun onMatchContent(contents: String, dispatcher: CoroutineDispatcher = Dispatchers.IO) {
         _isLoading.value = true
-        _content.value = contents
+        onTransit.value = Event(contents)
         viewModelScope.launch(dispatcher) {
             kotlin.runCatching {
                 // TODO DBConnect
