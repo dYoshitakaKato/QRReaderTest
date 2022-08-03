@@ -14,8 +14,6 @@ class QRreaderViewModel : ViewModel() {
 
     val onTransit = MutableLiveData<Event<String>>()
 
-    private val _content = MutableLiveData<String>()
-    val content: LiveData<String> = _content
     fun onMatchContent(contents: String, dispatcher: CoroutineDispatcher = Dispatchers.IO) {
         _isLoading.value = true
         onTransit.value = Event(contents)

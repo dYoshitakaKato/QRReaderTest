@@ -27,12 +27,4 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/navdrawer_menu" />
-
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/nav_host_fragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
-<!--        app:defaultNavHost="true"-->
-<!--        app:navGraph="@navigation/nav_drawer"/>-->
 </androidx.drawerlayout.widget.DrawerLayout>
